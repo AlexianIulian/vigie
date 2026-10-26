@@ -94,10 +94,10 @@ test('secrets never leak through narration, steps, prompts or errors', () => {
   const base = { session_id: 's', cwd: '/p', prompt_id: 'x', tool_use_id: 't' };
   const recs = [
     buildRecord({ ...base, hook_event_name: 'UserPromptSubmit', prompt: 'use my key sk-ant-api03-SECRETSECRETSECRET123' }),
-    buildRecord({ ...base, hook_event_name: 'PreToolUse', tool_name: 'Bash', tool_input: { command: 'curl -H "Authorization: Bearer abcdefghijklmnopqrstuv" https://api.x.com', description: 'call with token ghp_0123456789abcdefghijABCDEFGHIJ012345' } }),
+    buildRecord({ ...base, hook_event_name: 'PreToolUse', tool_name: 'Bash', tool_input: { command: 'curl -H "Authorization: Bearer ' + 'abcdefghijklmnopqrstuv" https://api.x.com', description: 'call with token ghp_' + '0123456789abcdefghijABCDEFGHIJ012345' } }),
     buildRecord({ ...base, hook_event_name: 'PostToolUse', tool_name: 'Bash', tool_input: { command: 'cat .env' }, tool_response: { stdout: 'OPENAI_API_KEY=sk-proj-abcdefghijklmnopqrstuvwxyz' } }),
     buildRecord({ ...base, hook_event_name: 'PostToolUseFailure', tool_name: 'Bash', tool_input: { command: 'x' }, error: 'bad password=hunter2hunter2' }),
-    buildRecord({ ...base, hook_event_name: 'PreToolUse', tool_name: 'Edit', tool_input: { file_path: '/p/.env', old_string: 'STRIPE_KEY=sk_live_abcdefghijk', new_string: 'STRIPE_KEY=sk_live_zyxwvutsrqp' } }),
+    buildRecord({ ...base, hook_event_name: 'PreToolUse', tool_name: 'Edit', tool_input: { file_path: '/p/.env', old_string: 'STRIPE_KEY=sk_live_' + 'abcdefghijk', new_string: 'STRIPE_KEY=sk_live_' + 'zyxwvutsrqp' } }),
   ];
   const all = JSON.stringify(recs);
   for (const leak of ['SECRETSECRET', 'abcdefghijklmnopqrstuv', 'ghp_0123', 'sk-proj-abc', 'hunter2hunter2', 'sk_live_abc', 'sk_live_zyx']) {

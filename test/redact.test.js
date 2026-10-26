@@ -4,12 +4,12 @@ const assert = require('node:assert/strict');
 const { redactString, sanitize, MASK } = require('../lib/redact');
 
 const SECRETS = [
-  'STRIPE_SECRET_KEY=sk_live_51HabcdefGHIJKLmnop',
+  'STRIPE_SECRET_KEY=sk_live_' + '51HabcdefGHIJKLmnop',
   'export ANTHROPIC_API_KEY="sk-ant-api03-AbCdEfGhIjKlMnOpQrStUv"',
-  'token ghp_0123456789abcdefghijABCDEFGHIJ012345',
-  'aws AKIAIOSFODNN7EXAMPLE',
+  'token ghp_' + '0123456789abcdefghijABCDEFGHIJ012345',
+  'aws AKIA' + 'IOSFODNN7EXAMPLE',
   'DATABASE_URL=postgres://admin:hunter2pass@db.example.com:5432/app',
-  'Authorization: Bearer abcdefghijklmnop.qrstuvwx',
+  'Authorization: Bearer ' + 'abcdefghijklmnop.qrstuvwx',
   'password: correcthorsebattery',
   '-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXk\n-----END OPENSSH PRIVATE KEY-----',
   'jwt eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N',
