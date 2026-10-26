@@ -90,6 +90,16 @@ Tu règles le comportement avec `claude plugin configure vigie`, le panneau `/co
 
 Vigie ne contourne pas les autorisations de Claude Code : il peut seulement ajouter une confirmation ou bloquer.
 
+## Vigie+ : apprendre en regardant
+
+Vigie te dit *ce que fait* Claude. **Vigie+** t'apprend *comment ça marche*. C'est un panneau à côté du chat où chaque commande est découpée en couleurs, ses options traduites, et chaque action devient une mini-leçon. Autour : XP, 7 rangs, badges, combos, quêtes du jour, un Codex de 100 notions à collectionner, des quiz à répétition espacée, un coach IA (Haiku) qui décode les commandes inconnues, et un mode prof où Claude t'envoie lui-même des leçons.
+
+```
+/plugin install vigie-plus --marketplace AlexianIulian/vigie
+```
+
+Détails dans [plus/README.md](plus/README.md).
+
 ## Vie privée et sécurité
 
 - **Rien ne sort de ta machine.** Vigie n'appelle aucun service, aucune IA externe : la narration est calculée localement, par des règles.
@@ -169,3 +179,7 @@ La comparaison détaillée avec les outils existants se trouve dans [BENCHMARK.m
 - Risk detection is rule-based: explainable, but it can miss a well-disguised script or flag a legitimate action.
 
 MIT licence.
+
+### Vigie+ (learning mode, French)
+
+A side panel that turns every Claude Code action into a mini-lesson: colour-coded command anatomy, flag explanations, XP, ranks, badges, daily quests, a collectible codex, spaced-repetition quizzes and an optional Haiku coach. `/plugin install vigie-plus --marketplace AlexianIulian/vigie`. See [plus/README.md](plus/README.md).

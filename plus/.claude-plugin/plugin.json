@@ -1,0 +1,21 @@
+{
+  "name": "vigie-plus",
+  "version": "0.2.0",
+  "description": "Apprendre le terminal en regardant Claude travailler : chaque commande découpée et expliquée dans un panneau à côté du chat, avec XP, niveaux, badges, quêtes du jour, Codex à collectionner, quiz à répétition espacée, coach IA et sons 8-bit.",
+  "types": "./types/index.d.ts",
+  "displayName": "Vigie+",
+  "author": {
+    "name": "Alexian"
+  },
+  "license": "MIT",
+  "icon": "./.claude-plugin/icon.png",
+  "keywords": [
+    "learning",
+    "education",
+    "gamification",
+    "terminal",
+    "french",
+    "beginners",
+    "vigie"
+  ]
+}
