@@ -1,0 +1,17 @@
+{
+  "name": "vigie",
+  "version": "0.1.0",
+  "description": "Voir ce que fait Claude Code, en clair : narration en français/anglais, garde-fou avant les actions risquées, tableau de bord local et vue terminal.",
+  "license": "MIT",
+  "author": "Alexian",
+  "bin": { "vigie": "scripts/vigie.js" },
+  "main": "lib/record.js",
+  "files": ["lib", "scripts", "ui", "demo", "hooks", "skills", ".claude-plugin", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node scripts/vigie.js demo",
+    "validate": "claude plugin validate ."
+  },
+  "keywords": ["claude-code", "plugin", "observability", "hooks", "agents", "security", "dashboard", "terminal"]
+}

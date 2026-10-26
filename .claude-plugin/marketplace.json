@@ -1,0 +1,12 @@
+{
+  "name": "vigie",
+  "owner": { "name": "Alexian" },
+  "description": "Vigie : voir ce que fait Claude Code, en clair.",
+  "plugins": [
+    {
+      "name": "vigie",
+      "source": "./",
+      "description": "Narration en clair, garde-fou expliqué, tableau de bord local et vue terminal pour Claude Code."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "vigie",
+  "displayName": "Vigie",
+  "version": "0.1.0",
+  "description": "Voir ce que fait Claude Code, en clair. Chaque action racontée en français ou en anglais, un garde-fou qui explique les actions risquées avant qu'elles s'exécutent, un tableau de bord local et une vue terminal. Zéro dépendance, zéro appel réseau.",
+  "author": { "name": "Alexian" },
+  "license": "MIT",
+  "keywords": ["observability", "narration", "safety", "guardrail", "dashboard", "terminal", "french", "beginners"],
+  "icon": "./.claude-plugin/icon.png",
+  "userConfig": {
+    "lang": {
+      "type": "string",
+      "title": "Langue / Language",
+      "description": "fr, en ou auto (langue du système).",
+      "default": "auto"
+    },
+    "guard": {
+      "type": "string",
+      "title": "Garde-fou / Guard",
+      "description": "ask : te demande confirmation avec une explication avant une action risquée. deny : la bloque. off : observe seulement.",
+      "default": "ask"
+    },
+    "guard_level": {
+      "type": "string",
+      "title": "Niveau du garde-fou / Guard level",
+      "description": "high (défaut) ou critical : à partir de quel niveau de risque le garde-fou intervient.",
+      "default": "high"
+    },
+    "port": {
+      "type": "number",
+      "title": "Port du tableau de bord / Dashboard port",
+      "description": "Port local du tableau de bord (127.0.0.1 uniquement).",
+      "default": 7456,
+      "min": 1024,
+      "max": 65535
+    },
+    "autostart": {
+      "type": "boolean",
+      "title": "Démarrage auto / Autostart",
+      "description": "Lance le tableau de bord en arrière-plan au début de chaque session.",
+      "default": true
+    }
+  }
+}
